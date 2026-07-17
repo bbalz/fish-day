@@ -202,14 +202,21 @@
 
   .when{
     position:relative;
-    margin:26px auto 0;display:inline-flex;align-items:center;gap:10px;
+    margin:26px auto 0;display:inline-flex;flex-direction:column;align-items:center;gap:6px;
     background:linear-gradient(135deg,var(--abyss),#0E4A5E);
     color:var(--sand);
     font-weight:700;letter-spacing:.05em;
     font-size:clamp(.8rem,2.6vw,.98rem);
-    padding:12px 28px;border-radius:999px;
+    padding:14px 30px;border-radius:22px;
     box-shadow:0 5px 20px rgba(7,48,63,.4),inset 0 1px 0 rgba(255,255,255,.08);
     animation:popIn .5s .5s cubic-bezier(.22,1,.36,1) both;
+  }
+  .when-line{display:flex;align-items:center;gap:10px;}
+  .when-address{
+    display:flex;align-items:center;gap:6px;
+    font-size:clamp(.72rem,2.2vw,.85rem);
+    font-weight:600;letter-spacing:.03em;
+    opacity:.85;
   }
   .when b{color:#fff;}
   .when svg{width:14px;height:14px;fill:var(--gold);flex-shrink:0;}
@@ -567,10 +574,16 @@
       <h1><span class="fish-text">FISH</span><span class="day-text">DAY</span></h1>
       <span class="title-accent"></span>
     </div>
-    <p class="when">
-      <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
-      Saturday, July 18 &nbsp;&#183;&nbsp; <b>4:00 PM</b>
-    </p>
+    <div class="when">
+      <span class="when-line">
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+        Saturday, July 18 &nbsp;&#183;&nbsp; <b>4:00 PM</b>
+      </span>
+      <span class="when-address">
+        <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:var(--gold);"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        1288 Spinnaker Dr.
+      </span>
+    </div>
     <p class="food">Food on the grill around 4:30 &#8211; 5:00</p>
   </header>
 
