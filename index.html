@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fish Day — Saturday, July 18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cabin:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --abyss:#07303F; --lake:#125E75; --shallow:#3FA6A0;
+    --foam:#EAF6F2; --sand:#F6E7C6; --sun:#EE7B30; --coral:#D94F3D;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; padding:24px 16px 40px;
+    background:
+      radial-gradient(120% 90% at 50% -10%, #1B7E92 0%, var(--lake) 45%, var(--abyss) 100%);
+    font-family:"Cabin", "Trebuchet MS", sans-serif;
+    color:var(--abyss);
+    display:flex; justify-content:center;
+  }
+  .card {
+    width:min(760px, 100%);
+    background:var(--foam);
+    border:6px solid var(--abyss);
+    border-radius:26px;
+    overflow:hidden;
+    box-shadow:0 26px 0 -8px rgba(7,48,63,.35), 0 40px 70px rgba(0,0,0,.35);
+  }
+
+  /* ---- Sign ---- */
+  .sign {
+    background:var(--sand);
+    padding:30px 24px 26px;
+    text-align:center;
+    border-bottom:6px solid var(--abyss);
+    position:relative;
+  }
+  .eyebrow {
+    margin:0 0 10px;
+    font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    font-size:clamp(.66rem,2.4vw,.8rem); color:var(--lake);
+  }
+  h1 {
+    font-family:"Alfa Slab One", Georgia, serif;
+    font-size:clamp(3.2rem, 15vw, 6.4rem);
+    line-height:.86; margin:0; color:var(--coral);
+    letter-spacing:-.02em;
+    text-shadow:5px 5px 0 var(--abyss);
+  }
+  h1 span { display:block; color:var(--lake); }
+  .when {
+    margin:20px auto 0; display:inline-block;
+    background:var(--abyss); color:var(--sand);
+    font-weight:700; letter-spacing:.06em;
+    font-size:clamp(.9rem,3.4vw,1.15rem);
+    padding:9px 18px; border-radius:999px;
+  }
+  .when b { color:#fff; }
+  .food {
+    margin:10px 0 0; font-size:.92rem; color:var(--lake); font-weight:600;
+  }
+
+  /* ---- Tank ---- */
+  .tank {
+    position:relative;
+    background:linear-gradient(180deg, #2C8FA4 0%, var(--lake) 100%);
+    padding:34px 18px 30px;
+    display:flex; gap:8px; justify-content:center; align-items:center; flex-wrap:wrap;
+    border-bottom:6px solid var(--abyss);
+    overflow:hidden;
+  }
+  .swimmer { text-align:center; flex:1 1 220px; max-width:300px; position:relative; z-index:2; }
+  .fish { width:100%; display:block; animation:swim 5.5s ease-in-out infinite; }
+  .swimmer:last-child .fish { animation-delay:-2.4s; }
+  @keyframes swim {
+    0%,100% { transform:translateY(0) rotate(-1.5deg); }
+    50%     { transform:translateY(-12px) rotate(1.5deg); }
+  }
+  .tag {
+    display:inline-block; margin-top:6px;
+    background:var(--sand); color:var(--abyss);
+    border:3px solid var(--abyss); border-radius:999px;
+    font-family:"Alfa Slab One", Georgia, serif;
+    font-size:1rem; padding:3px 20px;
+    transform:rotate(-2deg);
+  }
+  .swimmer:last-child .tag { transform:rotate(2deg); }
+  .bubble {
+    position:absolute; bottom:-30px; border-radius:50%;
+    background:rgba(234,246,242,.45); border:2px solid rgba(234,246,242,.7);
+    animation:rise linear infinite; z-index:1;
+  }
+  @keyframes rise {
+    0% { transform:translateY(0) scale(.7); opacity:0; }
+    15% { opacity:1; }
+    100% { transform:translateY(-330px) scale(1.15); opacity:0; }
+  }
+
+  /* ---- Note ---- */
+  .note { padding:30px 30px 34px; background:var(--foam); }
+  .note p { margin:0 0 16px; font-size:clamp(1rem,3vw,1.12rem); line-height:1.6; }
+  .note p:first-child {
+    font-family:"Alfa Slab One", Georgia, serif; color:var(--lake);
+    font-size:clamp(1.3rem,4.4vw,1.6rem); margin-bottom:14px;
+  }
+  .rsvp {
+    margin:24px 0 0; padding:16px 18px;
+    background:var(--sun); color:var(--abyss);
+    border:4px solid var(--abyss); border-radius:14px;
+    font-weight:700; text-align:center; line-height:1.45;
+  }
+  .signoff {
+    margin:22px 0 0; text-align:center; color:var(--lake);
+    font-family:"Alfa Slab One", Georgia, serif; font-size:1.05rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fish, .bubble { animation:none; }
+    .bubble { display:none; }
+  }
+  @media print {
+    body { background:#fff; padding:0; }
+    .card { box-shadow:none; border-width:4px; }
+    * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .bubble { display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <header class="sign">
+    <p class="eyebrow">Hey all! &nbsp;·&nbsp; Fish Day is among us</p>
+    <h1>FISH<span>DAY</span></h1>
+    <p class="when">Saturday, July 18 &nbsp;·&nbsp; <b>4:00 PM</b></p>
+    <p class="food">Food on the grill around 4:30–5:00</p>
+  </header>
+
+  <div class="tank">
+    <span class="bubble" style="left:8%;  width:14px; height:14px; animation-duration:7s;   animation-delay:-1s;"></span>
+    <span class="bubble" style="left:16%; width:8px;  height:8px;  animation-duration:5.5s; animation-delay:-3s;"></span>
+    <span class="bubble" style="left:47%; width:11px; height:11px; animation-duration:8s;   animation-delay:-5s;"></span>
+    <span class="bubble" style="left:78%; width:16px; height:16px; animation-duration:6.5s; animation-delay:-2s;"></span>
+    <span class="bubble" style="left:90%; width:9px;  height:9px;  animation-duration:9s;   animation-delay:-6s;"></span>
+
+    <div class="swimmer">
+
+<svg class="fish" viewBox="0 0 420 300" role="img" aria-label="A kid as a fish">
+  <defs>
+    <clipPath id="bodyE"><ellipse cx="175" cy="150" rx="140" ry="112"/></clipPath>
+  </defs>
+  <g >
+    <path d="M295,150 L418,64 C412,120 412,180 418,236 Z" fill="#EE7B30"/>
+    <path d="M112,60 C150,-2 232,0 258,58 C210,36 156,38 112,60 Z" fill="#F6E7C6"/>
+    <path d="M128,246 C152,296 214,300 244,250 C204,268 168,266 128,246 Z" fill="#F6E7C6"/>
+    <ellipse cx="175" cy="150" rx="148" ry="120" fill="#EAF6F2"/>
+    <image  clip-path="url(#bodyE)" x="30" y="38" width="290" height="224"
+           preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,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"/>
+    <circle cx="90" cy="125" r="22" fill="white" opacity=".9"/>
+    <circle cx="90" cy="128" r="11" fill="var(--abyss)"/>
+    <circle cx="86" cy="124" r="4" fill="white"/>
+    <path d="M52,162 Q90,192 130,162" fill="none" stroke="var(--coral)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
+
+      <span class="tag">Emersyn</span>
+    </div>
+
+    <div class="swimmer">
+
+<svg class="fish" viewBox="0 0 420 300" role="img" aria-label="A kid as a fish">
+  <defs>
+    <clipPath id="bodyL"><ellipse cx="175" cy="150" rx="140" ry="112"/></clipPath>
+  </defs>
+  <g>
+    <path d="M295,150 L418,64 C412,120 412,180 418,236 Z" fill="#3FA6A0"/>
+    <path d="M112,60 C150,-2 232,0 258,58 C210,36 156,38 112,60 Z" fill="#F6E7C6"/>
+    <path d="M128,246 C152,296 214,300 244,250 C204,268 168,266 128,246 Z" fill="#F6E7C6"/>
+    <ellipse cx="175" cy="150" rx="148" ry="120" fill="#EAF6F2"/>
+    <image clip-path="url(#bodyL)" x="30" y="38" width="290" height="224"
+           preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,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"/>
+    <circle cx="90" cy="125" r="22" fill="white" opacity=".9"/>
+    <circle cx="90" cy="128" r="11" fill="var(--abyss)"/>
+    <circle cx="86" cy="124" r="4" fill="white"/>
+    <path d="M52,162 Q90,192 130,162" fill="none" stroke="var(--coral)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
+
+      <span class="tag">Liam</span>
+    </div>
+  </div>
+
+  <section class="note">
+    <p>Come celebrate Fish Day!</p>
+    <p>Join us for an afternoon of fishing, grilling, and good times. Bring your rod, your appetite, and your best fish story.</p>
+    <div class="rsvp">
+      RSVP &mdash; Just shoot us a text!
+    </div>
+    <p class="signoff">See you at the lake!</p>
+  </section>
+
+</div>
+</body>
+</html>
