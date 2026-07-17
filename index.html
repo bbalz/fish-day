@@ -223,16 +223,70 @@
     background-clip:text;
   }
   .rsvp {
-    margin:28px 0 0; padding:18px 22px;
-    background:linear-gradient(135deg, var(--sun), #F5943E);
+    margin:28px 0 0; padding:0;
+    background:linear-gradient(135deg, var(--sun), #F5943E, #E8692A);
     color:var(--abyss);
-    border:none; border-radius:16px;
+    border:none; border-radius:20px;
     font-weight:700; text-align:center; line-height:1.5;
     font-size:1.05rem;
     box-shadow:
-      0 4px 20px rgba(238,123,48,.35),
+      0 6px 30px rgba(238,123,48,.4),
+      0 2px 8px rgba(0,0,0,.15),
       inset 0 1px 0 rgba(255,255,255,.3);
     letter-spacing:.02em;
+    overflow:hidden;
+    position:relative;
+  }
+  .rsvp::before {
+    content:"";
+    position:absolute; top:0; left:-50%; width:200%; height:100%;
+    background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,.08) 50%, transparent 100%);
+    animation: rsvpShimmer 3s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes rsvpShimmer {
+    0%,100% { transform:translateX(-30%); }
+    50%     { transform:translateX(30%); }
+  }
+  .rsvp-icon {
+    display:block;
+    font-size:2.2rem;
+    padding:18px 22px 0;
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,.15));
+  }
+  .rsvp-title {
+    display:block;
+    font-family:"Alfa Slab One", Georgia, serif;
+    font-size:clamp(1.3rem,4vw,1.6rem);
+    padding:6px 22px 0;
+    color:var(--abyss);
+    text-shadow:0 1px 0 rgba(255,255,255,.2);
+  }
+  .rsvp-detail {
+    display:block;
+    font-weight:600;
+    font-size:clamp(.88rem,2.8vw,.98rem);
+    padding:8px 26px 0;
+    color:rgba(7,48,63,.8);
+    line-height:1.5;
+  }
+  .rsvp-action {
+    display:inline-block;
+    margin:16px 0 20px;
+    padding:10px 32px;
+    background:var(--abyss);
+    color:var(--sand);
+    border-radius:999px;
+    font-weight:700;
+    font-size:.95rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    box-shadow: 0 4px 12px rgba(7,48,63,.3);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .rsvp-action:hover {
+    transform:translateY(-1px);
+    box-shadow: 0 6px 16px rgba(7,48,63,.4);
   }
   .signoff {
     margin:26px 0 0; text-align:center;
@@ -351,7 +405,10 @@
     <p>Come celebrate Fish Day!</p>
     <p>Join us for an afternoon of food, fun, and good times. Bring your appetite!</p>
     <div class="rsvp">
-      RSVP &mdash; Just shoot us a text!
+      <span class="rsvp-icon">&#9993;</span>
+      <span class="rsvp-title">RSVP by Tomorrow!</span>
+      <span class="rsvp-detail">We'll be picking up food &amp; drinks, so let us know if you can make it!</span>
+      <span class="rsvp-action">Shoot us a text</span>
     </div>
     <p class="signoff">See you there!</p>
   </section>
