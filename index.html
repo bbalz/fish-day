@@ -254,6 +254,19 @@
     50%{opacity:.9;transform:scale(1.1) translate(2%,-3%);}
     100%{opacity:.6;transform:scale(1.05) translate(-1%,2%);}
   }
+  @keyframes gentleRock{
+    0%,100%{transform:rotate(0deg);}
+    50%{transform:rotate(8deg);}
+  }
+  /* Surface shimmer line at top of tank */
+  .tank::after{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,
+      transparent 0%,rgba(255,255,255,.2) 20%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.2) 80%,transparent 100%);
+    background-size:200% 100%;
+    animation:surfaceShimmer 4s linear infinite;
+  }
+  @keyframes surfaceShimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
 
   /* Animated kelp */
   .kelp{position:absolute;bottom:-5px;z-index:1;opacity:.3;}
@@ -364,6 +377,17 @@
     width:50px;height:3px;border-radius:3px;
     background:linear-gradient(90deg,transparent,var(--shallow),transparent);
   }
+  .fish-emoji{
+    font-size:2.2rem;
+    margin:0 0 4px;
+    animation:fishEmoji 3s ease-in-out infinite;
+  }
+  @keyframes fishEmoji{
+    0%,100%{transform:translateX(0) scaleX(1);}
+    25%{transform:translateX(8px) scaleX(1);}
+    50%{transform:translateX(0) scaleX(-1);}
+    75%{transform:translateX(-8px) scaleX(-1);}
+  }
   .note-heading{
     font-family:"Alfa Slab One",Georgia,serif;
     font-size:clamp(1.5rem,6vw,2rem);
@@ -456,6 +480,18 @@
     border-radius:999px;
   }
 
+  .countdown{
+    margin:20px 0 0;
+    font-family:"Alfa Slab One",Georgia,serif;
+    font-size:clamp(.9rem,3vw,1.05rem);
+    color:var(--sun);
+    letter-spacing:.05em;
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:.7;}
+    50%{opacity:1;}
+  }
   .signoff{
     margin:32px 0 0;
     font-family:"Pacifico",cursive;
@@ -579,10 +615,25 @@
     </svg>
 
     <div class="sand-floor"></div>
+    <!-- Starfish & shells on the sand -->
+    <svg class="decor starfish" style="position:absolute;bottom:4px;left:15%;width:28px;height:28px;z-index:1;opacity:.35;animation:gentleRock 6s ease-in-out infinite;" viewBox="0 0 40 40">
+      <path d="M20,2 L24,14 L38,14 L27,22 L31,36 L20,28 L9,36 L13,22 L2,14 L16,14Z" fill="#F5C542"/>
+    </svg>
+    <svg class="decor shell" style="position:absolute;bottom:2px;right:20%;width:22px;height:18px;z-index:1;opacity:.3;" viewBox="0 0 30 24">
+      <path d="M3,22 Q15,-4 27,22 Q15,18 3,22Z" fill="#F6E7C6" stroke="rgba(7,48,63,.15)" stroke-width="1"/>
+      <path d="M8,18 Q15,2 22,18" fill="none" stroke="rgba(7,48,63,.08)" stroke-width="1"/>
+      <path d="M11,16 Q15,6 19,16" fill="none" stroke="rgba(7,48,63,.06)" stroke-width="1"/>
+    </svg>
+    <svg class="decor shell" style="position:absolute;bottom:3px;left:42%;width:16px;height:14px;z-index:1;opacity:.25;transform:rotate(15deg);" viewBox="0 0 30 24">
+      <path d="M3,22 Q15,-4 27,22 Q15,18 3,22Z" fill="#F6E7C6" stroke="rgba(7,48,63,.15)" stroke-width="1"/>
+    </svg>
 
-    <!-- Small background fish -->
-    <svg class="bg-fish" style="top:18%;width:30px;height:18px;animation-duration:18s;animation-delay:-5s;" viewBox="0 0 30 18"><ellipse cx="12" cy="9" rx="10" ry="7" fill="#EAF6F2"/><path d="M20,9 L30,3 L30,15Z" fill="#EAF6F2"/></svg>
-    <svg class="bg-fish" style="top:72%;width:22px;height:14px;animation-duration:14s;animation-delay:-10s;" viewBox="0 0 30 18"><ellipse cx="12" cy="9" rx="10" ry="7" fill="#EAF6F2"/><path d="M20,9 L30,3 L30,15Z" fill="#EAF6F2"/></svg>
+    <!-- School of background fish -->
+    <svg class="bg-fish" style="top:15%;width:28px;height:16px;animation-duration:20s;animation-delay:-3s;" viewBox="0 0 30 18"><ellipse cx="12" cy="9" rx="10" ry="7" fill="#EAF6F2"/><path d="M20,9 L30,3 L30,15Z" fill="#EAF6F2"/></svg>
+    <svg class="bg-fish" style="top:22%;width:22px;height:13px;animation-duration:22s;animation-delay:-5s;" viewBox="0 0 30 18"><ellipse cx="12" cy="9" rx="10" ry="7" fill="#EAF6F2"/><path d="M20,9 L30,3 L30,15Z" fill="#EAF6F2"/></svg>
+    <svg class="bg-fish" style="top:28%;width:18px;height:11px;animation-duration:19s;animation-delay:-8s;" viewBox="0 0 30 18"><ellipse cx="12" cy="9" rx="10" ry="7" fill="#EAF6F2"/><path d="M20,9 L30,3 L30,15Z" fill="#EAF6F2"/></svg>
+    <svg class="bg-fish" style="top:68%;width:24px;height:14px;animation-duration:16s;animation-delay:-10s;" viewBox="0 0 30 18"><ellipse cx="12" cy="9" rx="10" ry="7" fill="#EAF6F2"/><path d="M20,9 L30,3 L30,15Z" fill="#EAF6F2"/></svg>
+    <svg class="bg-fish" style="top:75%;width:16px;height:10px;animation-duration:14s;animation-delay:-12s;" viewBox="0 0 30 18"><ellipse cx="12" cy="9" rx="10" ry="7" fill="#EAF6F2"/><path d="M20,9 L30,3 L30,15Z" fill="#EAF6F2"/></svg>
 
     <div class="swimmer">
 <svg class="fish" viewBox="0 0 440 310" role="img" aria-label="Emma as a fish">
@@ -720,6 +771,7 @@
   </svg>
 
   <section class="note">
+    <p class="fish-emoji">&#x1F41F;</p>
     <p class="note-heading">Come celebrate Fish Day!</p>
     <p class="note-body">Join us for an afternoon of food, fun, and good times. Bring your appetite!</p>
     <div class="rsvp">
@@ -730,7 +782,20 @@
         <a href="sms:6082350991,4143052977" class="rsvp-action">Shoot us a text</a>
       </div>
     </div>
-    <p class="signoff">See you there!</p>
+    <p class="countdown" id="countdown"></p>
+    <p class="signoff">See you there! &#x1F30A;</p>
+<script>
+(function(){
+  var d=new Date(2026,6,18,16,0,0)-new Date();
+  var el=document.getElementById("countdown");
+  if(d>0){
+    var days=Math.floor(d/864e5);
+    if(days===0)el.textContent="Fish Day is TODAY!";
+    else if(days===1)el.textContent="Fish Day is TOMORROW!";
+    else el.textContent=days+" days until Fish Day!";
+  }else{el.textContent="Fish Day is here!";}
+})();
+</script>
   </section>
 
   <div class="footer">
