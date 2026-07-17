@@ -480,18 +480,6 @@
     border-radius:999px;
   }
 
-  .countdown{
-    margin:20px 0 0;
-    font-family:"Alfa Slab One",Georgia,serif;
-    font-size:clamp(.9rem,3vw,1.05rem);
-    color:var(--sun);
-    letter-spacing:.05em;
-    animation:pulse 2s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:.7;}
-    50%{opacity:1;}
-  }
   .signoff{
     margin:32px 0 0;
     font-family:"Pacifico",cursive;
@@ -782,20 +770,7 @@
         <a href="sms:6082350991,4143052977" class="rsvp-action">Shoot us a text</a>
       </div>
     </div>
-    <p class="countdown" id="countdown"></p>
     <p class="signoff">See you there! &#x1F30A;</p>
-<script>
-(function(){
-  var d=new Date(2026,6,18,16,0,0)-new Date();
-  var el=document.getElementById("countdown");
-  if(d>0){
-    var days=Math.floor(d/864e5);
-    if(days===0)el.textContent="Fish Day is TODAY!";
-    else if(days===1)el.textContent="Fish Day is TOMORROW!";
-    else el.textContent=days+" days until Fish Day!";
-  }else{el.textContent="Fish Day is here!";}
-})();
-</script>
   </section>
 
   <div class="footer">
